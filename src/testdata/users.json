@@ -1,0 +1,56 @@
+{
+    "validUser": {
+        "email": "testuser@example.com",
+        "password": "ValidPass123!"
+    },
+    "invalidUser": {
+        "email": "dummyuser@test.com",
+        "password": "dummypassword123"
+    },
+    "emptyCredentials": {
+        "email": "",
+        "password": ""
+    },
+    "invalidEmailFormats": [
+        {
+            "email": "no-at-sign.com",
+            "password": "somepassword123",
+            "description": "Missing @ symbol"
+        },
+        {
+            "email": "@no-local-part.com",
+            "password": "somepassword123",
+            "description": "Missing local part"
+        },
+        {
+            "email": "multiple@@at.com",
+            "password": "somepassword123",
+            "description": "Multiple @ symbols"
+        },
+        {
+            "email": "no.domain@",
+            "password": "somepassword123",
+            "description": "Missing domain"
+        },
+        {
+            "email": "spaces in@email.com",
+            "password": "somepassword123",
+            "description": "Spaces in email"
+        }
+    ],
+    "specialCharacterPasswords": [
+        {
+            "email": "testuser@example.com",
+            "password": "p@$$w0rd!#%",
+            "description": "Special characters password"
+        }
+    ],
+    "sqlInjection": {
+        "email": "admin'--@test.com",
+        "password": "' OR '1'='1"
+    },
+    "xssAttempt": {
+        "email": "<script>alert('xss')</script>@test.com",
+        "password": "<script>alert('xss')</script>"
+    }
+}
